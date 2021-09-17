@@ -58,6 +58,19 @@ if(isset($_POST['submit']))
         header("location: index.php"); 
 }
 
+// if(isset($_POST['cancel']))
+//   {
+    
+
+
+//         header("location: index.php"); 
+//          echo "<script>alert('Start a new form');</script>";
+
+// }
+// else {
+//    
+//     // exit();
+//     } 
     
 ?>
 
@@ -73,7 +86,9 @@ if(isset($_POST['submit']))
         <div class="container">
             <div style="margin-top: 30px">
             <?php
+                // if (isset($_SESSION["lname"])) {
                     echo "<h3>Confirm or edit your donation, " . $_SESSION['lname'] . "</h3>";
+                // }
             ?> 
             
                 <form method="post" onSubmit='onSubmit()'>
@@ -81,31 +96,31 @@ if(isset($_POST['submit']))
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="lname">Last Name</label>
-                            <input class="form-control" type="text" placeholder="Enter your Last Name" name="lname" id="lname" value="<?php echo $_SESSION['lname'];?>">
+                            <input class="form-control" type="text" placeholder="Enter your Last Name" name="lname" id="lname" value="<?php echo $_SESSION['lname'];?>" required>
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="fname">First Name</label>
-                            <input class="form-control" type="text" placeholder="Enter your First Name" name="fname" id="fname" value="<?php echo $_SESSION['fname'];?>">
+                            <input class="form-control" type="text" placeholder="Enter your First Name" name="fname" id="fname" value="<?php echo $_SESSION['fname'];?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-4">
                             <label for="address">Street Address</label>
-                            <input class="form-control" type="text" placeholder="Address" name="address" id="address" value="<?php echo $_SESSION['address'];?>">
+                            <input class="form-control" type="text" placeholder="Address" name="address" id="address" value="<?php echo $_SESSION['address'];?>" required>
                         </div>
                         <div class="form-group col-sm-12 col-lg-4">
                             <label for="city">City</label>
-                            <input class="form-control" type="text" placeholder="City" name="city" id="city" value="<?php echo $_SESSION['city'];?>">
+                            <input class="form-control" type="text" placeholder="City" name="city" id="city" value="<?php echo $_SESSION['city'];?>" required>
                         </div>
                         <div class="form-group col-sm-12 col-lg-4">
                             <label for="state">State/Region</label>
-                            <input class="form-control" type="text" placeholder="State" name="state" id="state" value="<?php echo $_SESSION['state'];?>">
+                            <input class="form-control" type="text" placeholder="State" name="state" id="state" value="<?php echo $_SESSION['state'];?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="country">Country</label>
-                                <select id="country" name="country" class="form-control" value="<?php echo $_SESSION['country'];?>">
+                                <select id="country" name="country" class="form-control" value="<?php echo $_SESSION['country'];?>" required>
                                     <option value="<?php echo $_SESSION['country'];?>"><?php echo $_SESSION['country'];?></option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
@@ -355,23 +370,23 @@ if(isset($_POST['submit']))
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="postcode">Postal Code</label>
-                            <input class="form-control" type="text" placeholder="Postal Code" name="postcode" id="postcode" value="<?php echo $_SESSION['postcode'];?>">
+                            <input class="form-control" type="text" placeholder="Postal Code" name="postcode" id="postcode" value="<?php echo $_SESSION['postcode'];?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="mobno">Phone Number</label>
-                            <input class="form-control" type="text" name="mobno" placeholder="Phone Number" maxlength="11" pattern="[0-9]+" id="mobno" value="<?php echo $_SESSION['mobno'];?>"/>                
+                            <input class="form-control" type="text" name="mobno" placeholder="Phone Number" maxlength="11" pattern="[0-9]+" id="mobno" value="<?php echo $_SESSION['mobno'];?>" required/>                
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="email">Email</label>
-                            <input class="form-control" type="email" placeholder="Email" name="email" id="email" value="<?php echo $_SESSION['email'];?>">
+                            <input class="form-control" type="email" placeholder="Email" name="email" id="email" value="<?php echo $_SESSION['email'];?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="contact">Preferred form of contact</label>
-                            <select class="form-control" name="contact" id="contact" >
+                            <select class="form-control" name="contact" id="contact" required>
                                 <option value="<?php echo $_SESSION['contact'];?>">
                                     <?php echo $_SESSION['contact'];?>
                                 </option>
@@ -385,7 +400,7 @@ if(isset($_POST['submit']))
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="payment">Preferred form of payment</label>
-                            <select class="form-control" id="payment" name="payment">
+                            <select class="form-control" id="payment" name="payment" required>
                                 <option value="<?php echo $_SESSION['payment'];?>">
                                     <?php echo $_SESSION['payment'];?>
                                 </option>
@@ -405,7 +420,7 @@ if(isset($_POST['submit']))
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="donation">Frequency of donation</label>
-                            <select id="donation" name="donation" class="form-control" >
+                            <select id="donation" name="donation" class="form-control" required>
                                 <option value="<?php echo $_SESSION['donation'];?>">
                                     <?php echo $_SESSION['donation'];?></option>
 
@@ -422,7 +437,7 @@ if(isset($_POST['submit']))
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="currency">Amount of Donation</label>
-                            <input type="number" class="form-control" placeholder="99.9" pattern="[0-9]+" name="currency" id="currency" value="<?php echo $_SESSION['currency'];?>">  
+                            <input type="number" class="form-control" placeholder="99.9" pattern="[0-9]+" name="currency" id="currency" value="<?php echo $_SESSION['currency'];?>" required>  
                         </div>
                     </div>
                     <!-- <div class="form-group col-4">
@@ -430,26 +445,51 @@ if(isset($_POST['submit']))
                         <textarea class="form-control" rows="5" placeholder="Comments" name="comment" id="comment">
                     </div> -->
                     <div class="row">
-                        <div class="form-group col-sm-12 col-lg-6">
-                            <label for="comment">Comment</label>
-                            <textarea class="form-control" id="comment" rows="5" name="comment"><?php echo $_SESSION['comment'];?></textarea>
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="row">
+                                <div class="form-group col-sm-12 col-lg-12">
+                                    <label for="comment">Comment</label>
+                                    <textarea class="form-control" id="comment" rows="5" name="comment" required><?php echo $_SESSION['comment'];?></textarea>
+
+                                </div>
+                                <div class="form-group col-sm-12 col-lg-12">
+                                    <!-- <input class="btn btn-success" onClick="confirmsub()" type="button" value="Review"> -->
+                                    <!-- <input class="btn btn-success" name="submit" type="submit" value="Review"> -->
+                                    <button type="submit" class="btn btn-success" name="submit">Confirm</button>
+                                    <button type="button" class="btn btn-danger" onClick=cancel()>Cancel</button>
+
+                                </div>
+
+                            </div>
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
-                            <p>Amount in dollars: <strong><span id="payment_text"></span></strong></p>            
-                            <p>Amount in dollars for a year: <strong><span id="conversion_in_dollars"></span></strong></p>            
-                            <p>Amount in selected currency (<strong><?php echo $_SESSION['payment'];?></strong>) for a year: <strong><span id="yearly_amount"></span></strong></p>              
+                            <p>Bitcoin amount in dollars: <strong><span id="payment_text"></span></strong></p>            
+                            <p>Bitcoin Amount in dollars for a year: <strong><span id="conversion_in_dollars"></span></strong></p>            
+                            <p>Bitcoin Amount for a year: <strong><span id="yearly_amount"></span></strong></p>              
+                            <br>
+                            <p>Euro Amount in dollars: <strong><span id="payment_text_euro"></span></strong></p>            
+                            <p>Euro Amount in dollars for a year: <strong><span id="conversion_in_dollars_euro"></span></strong></p>            
+                            <p>Euro Amount for a year: <strong><span id="yearly_amount_euro"></span></strong></p>              
+                            <br>
+                            <p>USD Amount in dollars: <strong><span id="payment_text_usd"></span></strong></p>            
+                            <p>USD Amount in dollars for a year: <strong><span id="conversion_in_usd"></span></strong></p>            
+                            <p>USD Amount for a year: <strong><span id="yearly_amount_usd"></span></strong></p>              
+
+
+
+                        
+                        
+                        
                         </div>
+
+                        
                     </div>
 
                     <div class="row">
 
-                        <div class="form-group col-sm-12 col-lg-8">
-                            <!-- <input class="btn btn-success" onClick="confirmsub()" type="button" value="Review"> -->
-                            <!-- <input class="btn btn-success" name="submit" type="submit" value="Review"> -->
-                            <button type="submit" class="btn btn-success" name="submit">Confirm</button>
-                            <button type="button" class="btn btn-danger" onClick=cancel()>Cancel</button>
+                        
 
-                        </div>
+                        
                     </div>
                     
                     <?php
@@ -459,11 +499,11 @@ if(isset($_POST['submit']))
                         // echo $lname=$_POST['lname'];
                         // echo "<h3>Confirm your donation, " . $_SESSION['lname'] . "</h3>";
 
-                        echo "<p> " . $_SESSION['lname'] . " :: lastname </br></p>";
-                        echo "<p> " . $_SESSION['country'] . " :: country </br></p>";
-                        echo "<p> " . $_SESSION['payment'] . " :: payment </br></p>";
-                        echo "<p> " . $_SESSION['contact'] . " :: contact </br></p>";
-                        echo "<p> " . $_SESSION['donation'] . " :: donation </br></p>";
+                        // echo "<p> " . $_SESSION['lname'] . " :: lastname </br></p>";
+                        // echo "<p> " . $_SESSION['country'] . " :: country </br></p>";
+                        // echo "<p> " . $_SESSION['payment'] . " :: payment </br></p>";
+                        // echo "<p> " . $_SESSION['contact'] . " :: contact </br></p>";
+                        // echo "<p> " . $_SESSION['donation'] . " :: donation </br></p>";
 // }
 
                     ?>
@@ -529,27 +569,48 @@ if(isset($_POST['submit']))
                 document.getElementById('yearly_amount').innerHTML = yearly_amount
                 document.getElementById('conversion_in_dollars').innerHTML = conversion_in_dollars
 
-            }else if ((<?php echo $_SESSION['payment'];?>) = "Euro"){
+            }
+            
+            if ((<?php echo $_SESSION['payment'];?>) = "Euro"){
                 console.log('<?php echo $_SESSION['payment'];?>');
                 console.log('<?php echo $_SESSION['currency'];?> is in EURO' );
                 var text = (fx.convert((<?php echo $_SESSION['currency'];?>), {from: "EUR", to: "USD"}));
                 // console.log(text, "text");
-                let conversion_in_dollars = text * 12
-                console.log(conversion_in_dollars, "conversion_in_dollars")
+                let conversion_in_dollars_euro = text * 12
+                console.log(conversion_in_dollars_euro, "conversion_in_dollars_euro")
 
                 let a = <?php echo $_SESSION['currency'];?>;
-                let yearly_amount  =  a * 12;
-                console.log(yearly_amount, "yearly_amount")
+                let yearly_amount_euro  =  a * 12;
+                console.log(yearly_amount_euro, "yearly_amount")
 
 
-                document.getElementById('payment_text').innerHTML = text
-                document.getElementById('yearly_amount').innerHTML = yearly_amount
-                document.getElementById('conversion_in_dollars').innerHTML = conversion_in_dollars
+                document.getElementById('payment_text_euro').innerHTML = text
+                document.getElementById('yearly_amount_euro').innerHTML = yearly_amount_euro
+                document.getElementById('conversion_in_dollars_euro').innerHTML = conversion_in_dollars_euro
 
             }
-            else{
-                alert('hello')
+            
+            if((<?php echo $_SESSION['payment'];?>) = "USD"){
+                console.log('<?php echo $_SESSION['payment'];?>');
+                console.log('<?php echo $_SESSION['currency'];?> is in USD' );
+                var text = (fx.convert((<?php echo $_SESSION['currency'];?>), {from: "USD", to: "USD"}));
+                // console.log(text, "text");
+                let conversion_in_usd = text * 12
+                console.log(conversion_in_usd, "conversion_in_usd")
+
+                let a = <?php echo $_SESSION['currency'];?>;
+                let yearly_amount_usd  =  a * 12;
+                console.log(yearly_amount_usd, "yearly_amount_usd")
+
+
+                document.getElementById('payment_text_usd').innerHTML = text
+                document.getElementById('yearly_amount_usd').innerHTML = yearly_amount_usd
+                document.getElementById('conversion_in_usd').innerHTML = conversion_in_usd
+
             }
+            // else{
+            //     alert('hello')
+            // }
 
 
 

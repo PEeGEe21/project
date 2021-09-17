@@ -62,31 +62,31 @@ if(isset($_POST['submit']))
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="lname">Last Name</label>
-                            <input class="form-control" type="text" placeholder="Enter your Last Name" name="lname" id="lname">
+                            <input class="form-control" type="text" placeholder="Enter your Last Name" name="lname" id="lname" required>
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="fname">First Name</label>
-                            <input class="form-control" type="text" placeholder="Enter your First Name" name="fname" id="fname">
+                            <input class="form-control" type="text" placeholder="Enter your First Name" name="fname" id="fname" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-4">
                             <label for="address">Street Address</label>
-                            <input class="form-control" type="text" placeholder="Address" name="address" id="address">
+                            <input class="form-control" type="text" placeholder="Address" name="address" id="address" required>
                         </div>
                         <div class="form-group col-sm-12 col-lg-4">
                             <label for="city">City</label>
-                            <input class="form-control" type="text" placeholder="City" name="city" id="city">
+                            <input class="form-control" type="text" placeholder="City" name="city" id="city" required>
                         </div>
                         <div class="form-group col-sm-12 col-lg-4">
                             <label for="state">State/Region</label>
-                            <input class="form-control" type="text" placeholder="State" name="state" id="state">
+                            <input class="form-control" type="text" placeholder="State" name="state" id="state" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="country">Country</label>
-                                <select id="country" name="country" class="form-control">
+                                <select id="country" name="country" class="form-control" required>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
                                     <option value="Albania">Albania</option>
@@ -335,23 +335,23 @@ if(isset($_POST['submit']))
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="postcode">Postal Code</label>
-                            <input class="form-control" type="text" placeholder="Postal Code" name="postcode" id="postcode">
+                            <input class="form-control" type="text" placeholder="Postal Code" name="postcode" id="postcode" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="mobno">Phone Number</label>
-                            <input class="form-control" type="text" name="mobno" placeholder="Phone Number" maxlength="11" pattern="[0-9]+" id="mobno"/>                
+                            <input class="form-control" type="text" name="mobno" placeholder="Phone Number" maxlength="11" pattern="[0-9]+" id="mobno" required/>                
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="email">Email</label>
-                            <input class="form-control" type="email" placeholder="Email" name="email" id="email">
+                            <input class="form-control" type="email" placeholder="Email" name="email" id="email" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="contact">Preferred form of contact</label>
-                            <select class="form-control" name="contact" id="contact">
+                            <select class="form-control" name="contact" id="contact" required>
                                 <option>
                                     Phone
                                 </option>
@@ -362,7 +362,7 @@ if(isset($_POST['submit']))
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="payment">Preferred form of payment</label>
-                            <select class="form-control" id="payment" name="payment">
+                            <select class="form-control" id="payment" name="payment" required>
                                 <option>
                                     USD
                                 </option>
@@ -378,7 +378,7 @@ if(isset($_POST['submit']))
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="donation">Frequency of donation</label>
-                            <select id="donation" name="donation" class="form-control">
+                            <select id="donation" name="donation" class="form-control" required>
                                 <option>
                                     Monthly
                                 </option>
@@ -392,13 +392,13 @@ if(isset($_POST['submit']))
                         </div>
                         <div class="form-group col-sm-12 col-lg-6">
                             <label for="currency">Amount of Donation</label>
-                            <input type="number" class="form-control" placeholder="99.9" pattern="[0-9]+" name="currency" id="currency">                
+                            <input type="number" class="form-control" placeholder="99.9" pattern="[0-9]+" name="currency" id="currency" required>                
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12 col-lg-8">
                             <label for="comment">Comment</label>
-                            <textarea class="form-control" id="comment" rows="5" name="comment"></textarea>
+                            <textarea class="form-control" id="comment" rows="5" name="comment" required></textarea>
                         </div>
 
                         <div class="form-group col-8">
