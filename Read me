@@ -2,15 +2,15 @@ How to run the donor app
 
 1.Download the file
 
-3.Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/html)
+2.Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/html)
 
-4.Open PHPMyAdmin (http://localhost/phpmyadmin)
+3.Open PHPMyAdmin (http://localhost/phpmyadmin)
 
-5.Create a database with name project
+4.Create a database with name project
 
-6.Import project.sql file(given inside the zip package in SQL file folder)
+5.Import project.sql file(given inside the zip package in SQL file folder)
 
-7.Run the script http://localhost/project
+6.Run the script http://localhost/project
 
 
 
